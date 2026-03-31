@@ -1,9 +1,114 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Section from "../components/UI/Section.astro";
 
-const metaDescription = "DESCRIPTION";
+const pillars = [
+  {
+    title: "Fractional CFO Support",
+    description: "Integrating seamlessly into your existing governance structure with the financial acumen your organization demands.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+  },
+  {
+    title: "Strategic Planning",
+    description: "Framing financial tradeoffs and strengthening reporting to empower confident, informed decisions.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`
+  },
+  {
+    title: "Financial Continuity",
+    description: "Providing high-level perspective and institutional knowledge without the commitment of executive overhead.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7 12 2"/></svg>`
+  },
+];
+
+const metaDescription = "Seaside Creek Advisors provides fractional CFO leadership, strategic planning, and financial continuity for growing organizations.";
 ---
 
-<Layout description={metaDescription}>
-  <h1 class="text-3xl font-bold">Hello, World!!!!!</h1>
+<Layout title="Executive Financial Leadership" description={metaDescription}>
+  
+  <Section background="relative h-[90vh] flex items-center justify-center overflow-hidden !py-0 !px-0">
+    <img
+      src="https://images.unsplash.com/photo-1533852990198-bdd4082bf8c0?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Serene maritime coastline"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-slate-900/60 shadow-inner"></div>
+    
+    <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-6 animate-fade-up">
+        Executive Financial Leadership <span class="text-blue-200 italic font-light block md:inline">Without Full-Time Overhead.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-up" style="animation-delay: 0.2s;">
+        Access seasoned CFO guidance for budgeting, forecasting, and strategic
+        decision support—delivered with flexibility that fits your organization's
+        rhythm.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.4s;">
+        <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 font-semibold text-sm uppercase tracking-widest rounded shadow-xl hover:bg-slate-100 transition-all active:scale-95">
+          Get Started
+        </a>
+        <a href="#about" class="w-full sm:w-auto px-10 py-4 border border-white/60 text-white font-semibold text-sm uppercase tracking-widest rounded hover:bg-white/10 backdrop-blur-sm transition-all">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <Section background="stone" class="py-24 lg:py-32">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 lg:mb-24">
+        <h2 class="text-blue-900 text-sm font-bold uppercase tracking-[0.2em] mb-4">Our Mission</h2>
+        <h3 class="text-3xl md:text-5xl font-serif font-semibold text-slate-900 mb-8">
+          Strategic Clarity. Technical Rigor.
+        </h3>
+        <p class="text-slate-600 leading-relaxed max-w-3xl mx-auto text-lg md:text-xl">
+          Seaside Creek Advisors provides CFO-level leadership to organizations
+          requiring clarity and discipline. Founded by a CPA and MBA with a
+          background in public accounting and asset management, we focus on sound
+          judgment and practical decision support.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        {pillars.map((p) => (
+          <div class="group relative bg-white border border-slate-200 rounded-xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-t-xl"></div>
+            
+            <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 text-blue-700">
+              <Fragment set:html={p.icon} />
+            </div>
+            <h4 class="text-xl font-serif font-bold text-slate-900 mb-4 italic">
+              {p.title}
+            </h4>
+            <p class="text-slate-600 leading-relaxed text-base">
+              {p.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
 </Layout>
+
+<style is:global>
+  /* Ensure smooth scrolling for the anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+</style>
