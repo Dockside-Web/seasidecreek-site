@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import logoWhiteHorizontal from "../assets/logoWhiteHorizontal.svg";
 import Button from "./Button.astro";
 
 const navLinks = [
@@ -18,18 +20,7 @@ const currentPath = Astro.url.pathname;
       href="/"
       class="group flex flex-col items-start font-headers tracking-wide"
     >
-      <span
-        id="logo-title"
-        class="text-2xl text-white transition-colors duration-500"
-      >
-        Seaside Creek Advisors
-      </span>
-      <span
-        id="logo-subtitle"
-        class="block text-[10px] tracking-[0.3em] uppercase font-light text-white/70 transition-colors duration-500"
-      >
-        Charleston, SC
-      </span>
+      <Image src={logoWhiteHorizontal} alt="Seaside Creek Advisors Logo" class="w-3/4 h-auto" />
     </a>
 
     <nav class="hidden lg:flex items-center gap-8">
