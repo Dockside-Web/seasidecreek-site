@@ -1,10 +1,11 @@
 ---
 interface Props {
   background?: "stone" | "white" | string;
-  class?: string; 
+  class?: string;
+  id?: string;
 }
 
-const { background = "stone", class: className } = Astro.props;
+const { background = "stone", class: className, id } = Astro.props;
 
 // Map the simple names to the actual Tailwind classes
 const bgMap: Record<string, string> = {
@@ -16,10 +17,10 @@ const bgMap: Record<string, string> = {
 const bgClass = bgMap[background] || background;
 ---
 
-<section class:list={["py-18", bgClass]}>
+<section class:list={["py-18", bgClass]}, id={id}>
   <div class:list={[
     "container mx-auto px-6",
-    className 
+    className
   ]}>
     <slot />
   </div>

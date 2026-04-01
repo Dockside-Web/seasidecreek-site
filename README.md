@@ -1,19 +1,6 @@
-This is the starter template for all Astro websites for Dockside Web Solutions, LLC.
-
-AFTER CLONING, RUN THESE 2 COMMANDS
-npm install
-npx astro sync
-ctrl + shift +p
-search for Restart TS Server
-
 THINGS THAT NEED CHANGING FOR EACH NEW WEBSITE
 
-styles/global.css
-Brand colors
-Font
-
 SEO.astro
-brandName
 homepageTagline
 
 ContactForm.astro
@@ -23,6 +10,3 @@ turnstileSiteKey
 IMAGES NOT THOUGHT ABOUT
 Image for SEO
 Favicon
-
-Public/robots.txt
-SITEMAP

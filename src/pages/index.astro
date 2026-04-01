@@ -1,21 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/UI/Section.astro";
+import SectionHeader from "../components/UI/SectionHeader.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Button from "../components/Button.astro";
 
 const pillars = [
   {
     title: "Fractional CFO Support",
-    description: "Integrating seamlessly into your existing governance structure with the financial acumen your organization demands.",
+    description: "Providing CFO-level leadership for organizations requiring clarity and discipline in financial decision-making. Our work draws on experience spanning public accounting, investment management, and advisory consulting to integrate seamlessly into your existing governance rhythms.",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
   },
   {
     title: "Strategic Planning",
-    description: "Framing financial tradeoffs and strengthening reporting to empower confident, informed decisions.",
+    description: "Founded by a CPA and MBA, we bring technical rigor to framing financial tradeoffs and strengthening reporting processes. We support informed discussions where governance structures, seasonality, or long-term capital considerations add complexity to your strategy.",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`
   },
   {
     title: "Financial Continuity",
-    description: "Providing high-level perspective and institutional knowledge without the commitment of executive overhead.",
+    description: "Operating as a financial partner rather than a replacement for internal staff, we provide continuity without full-time executive overhead. Our approach focuses on sound judgment and practical decision support that extends beyond reporting to include interpretation and communication.",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7 12 2"/></svg>`
   },
 ];
@@ -23,92 +26,138 @@ const pillars = [
 const metaDescription = "Seaside Creek Advisors provides fractional CFO leadership, strategic planning, and financial continuity for growing organizations.";
 ---
 
-<Layout title="Executive Financial Leadership" description={metaDescription}>
+<Layout description={metaDescription}>
   
-  <Section background="relative h-[90vh] flex items-center justify-center overflow-hidden !py-0 !px-0">
+  <section class="relative min-h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-slate-900">
     <img
-      src="https://images.unsplash.com/photo-1533852990198-bdd4082bf8c0?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      src="https://images.unsplash.com/photo-1533852990198-bdd4082bf8c0?q=80&w=1933&auto=format&fit=crop"
       alt="Serene maritime coastline"
-      class="absolute inset-0 w-full h-full object-cover"
+      class="absolute inset-0 w-full h-full object-cover opacity-60 md:opacity-80"
     />
-    <div class="absolute inset-0 bg-slate-900/60 shadow-inner"></div>
+    <div class="absolute inset-0 bg-linear-to-b from-slate-900/90 via-slate-900/60 to-slate-900/90 shadow-inner"></div>
     
-    <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
-      <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-6 animate-fade-up">
-        Executive Financial Leadership <span class="text-blue-200 italic font-light block md:inline">Without Full-Time Overhead.</span>
+    <div class="relative z-10 text-center max-w-4xl mx-auto px-6 py-20">
+      <h1 class="text-3xl md:text-6xl font-serif font-bold text-white leading-tight mb-6 animate-fade-up">
+        Executive financial leadership <span class="text-brand-accent italic font-light block md:inline decoration-brand-accent/30">without full-time overhead</span>
       </h1>
-      <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-up" style="animation-delay: 0.2s;">
-        Access seasoned CFO guidance for budgeting, forecasting, and strategic
-        decision support—delivered with flexibility that fits your organization's
-        rhythm.
+      <p class="text-base md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-10 animate-fade-up" style="animation-delay: 0.2s;">
+        Access seasoned CFO guidance for budgeting, forecasting, capital planning, and strategic decision support. Delivered with flexibility that fits your organization’s needs and rhythm.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.4s;">
-        <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 font-semibold text-sm uppercase tracking-widest rounded shadow-xl hover:bg-slate-100 transition-all active:scale-95">
-          Get Started
-        </a>
-        <a href="#about" class="w-full sm:w-auto px-10 py-4 border border-white/60 text-white font-semibold text-sm uppercase tracking-widest rounded hover:bg-white/10 backdrop-blur-sm transition-all">
-          Learn More
-        </a>
+        <Button href="/contact" variant="accent" size="md">
+          Schedule a Consultation
+          </Button>
       </div>
     </div>
-  </Section>
+  </section>
 
-  <Section background="stone" class="py-24 lg:py-32">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16 lg:mb-24">
-        <h2 class="text-blue-900 text-sm font-bold uppercase tracking-[0.2em] mb-4">Our Mission</h2>
-        <h3 class="text-3xl md:text-5xl font-serif font-semibold text-slate-900 mb-8">
-          Strategic Clarity. Technical Rigor.
-        </h3>
-        <p class="text-slate-600 leading-relaxed max-w-3xl mx-auto text-lg md:text-xl">
-          Seaside Creek Advisors provides CFO-level leadership to organizations
-          requiring clarity and discipline. Founded by a CPA and MBA with a
-          background in public accounting and asset management, we focus on sound
-          judgment and practical decision support.
-        </p>
-      </div>
+  <Section background="white" id="about" class="overflow-x-hidden">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <SectionHeader tagline="Our Mission" title="Strategic Clarity. Technical Rigor.">
+        Seaside Creek Advisors provides CFO-level financial leadership to organizations that require clarity, discipline, and continuity in their decision-making. 
+        We partner with leadership teams to help frame financial tradeoffs and strengthen planning processes through thoughtful analysis. 
+        Our firm operates as a dedicated partner, integrating into your existing rhythm without the burden of full-time executive overhead. 
+        We are committed to delivering the technical rigor and strategic training necessary for complex financial environments.
+      </SectionHeader>
 
-      <div class="grid md:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-16">
         {pillars.map((p) => (
-          <div class="group relative bg-white border border-slate-200 rounded-xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-            <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-t-xl"></div>
-            
-            <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 text-blue-700">
-              <Fragment set:html={p.icon} />
+          <div class="group relative overflow-hidden bg-brand-secondary/30 border border-slate-200 rounded-xl p-8 md:p-10 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
+            <div class="absolute inset-0 bg-linear-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-0 left-0 w-full h-1 bg-brand-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+
+            <div class="relative z-10">                
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 text-brand-primary">
+                  <Fragment set:html={p.icon} />
+                </div>
+                <h4 class="text-lg md:text-xl font-serif font-bold mb-4 italic">
+                  {p.title}
+                </h4>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                  {p.description}
+                </p>
             </div>
-            <h4 class="text-xl font-serif font-bold text-slate-900 mb-4 italic">
-              {p.title}
-            </h4>
-            <p class="text-slate-600 leading-relaxed text-base">
-              {p.description}
-            </p>
           </div>
         ))}
       </div>
     </div>
   </Section>
 
+  <Section background="stone" id="contact" class="overflow-x-hidden">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <SectionHeader tagline="Connect" title="Let's Strengthen Your Financial Strategy" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <ContactForm /> 
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col justify-center space-y-8 md:space-y-10 py-4 order-1 lg:order-2">
+          <div>
+            <h3 class="font-serif text-2xl font-semibold mb-4">
+              Get in Touch
+            </h3>
+            <p class="text-slate-600 leading-relaxed text-base md:text-lg italic">
+              We welcome the opportunity to discuss how Seaside Creek Advisors
+              can support your organization's financial leadership needs.
+            </p>
+          </div>
+
+          <div class="space-y-4 md:space-y-6">
+            <a href="mailto:kevin@seasidecreek.com" class="flex items-center gap-4 hover:text-brand-accent transition-all group">
+              <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Email Us</p>
+                <span class="text-sm md:text-base font-medium group-hover:underline">
+                  kevin@seasidecreek.com
+                </span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 hover:text-brand-accent transition-all group">
+              <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Network</p>
+                <span class="text-sm md:text-base font-medium group-hover:underline">
+                  LinkedIn Profile
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
 </Layout>
 
 <style is:global>
-  /* Ensure smooth scrolling for the anchor links */
+  /* Prevents horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .animate-fade-up {
-    animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
 </style>

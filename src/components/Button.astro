@@ -1,45 +1,40 @@
 ---
 interface Props {
     href: string;
-    variant?: "primary" | "secondary" | "secondaryLight";
+    variant?: "primary" | "secondary" | "accent" | "outlineNavy" | "outlineGold" | "light" | "ghost";
     size?: "sm" | "md" | "lg";
     class?: string;
 }
 
-const {
-    href,
-    variant = "primary",
-    size = "md",
-    class: className
-} = Astro.props;
+const { href, variant = "primary", size = "md", class: className } = Astro.props;
 
-// Base styles for all buttons
 const baseStyles =
-    "inline-flex items-center justify-center rounded-md font-bold uppercase tracking-widest transition-all active:scale-95";
+    "inline-flex items-center justify-center rounded-md font-bold uppercase tracking-widest transition-all duration-200 active:scale-95";
 
-// Variant styles
 const variants = {
     primary:
-        "bg-brand-primary text-brand-secondary hover:brightness-85 shadow-md hover:shadow-xl hover:-translate-y-0.5",
+        "bg-brand-primary text-brand-secondary hover:brightness-115 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(50,79,129,0.35)]",
+    accent:
+        "bg-brand-accent text-stone-900 hover:brightness-108 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(197,160,89,0.4)]",
+    light:
+        "bg-brand-secondary border border-slate-200 hover:bg-white hover:border-brand-primary hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(50,79,129,0.15)]",
+    outlineNavy:
+        "border-2 border-brand-primary hover:bg-brand-primary hover:text-brand-secondary hover:-translate-y-0.5",
+    outlineGold:
+        "border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-stone-900 hover:-translate-y-0.5",
     secondary:
-        "border-2 border-brand-secondary text-brand-secondary hover:bg-brand-secondary hover:text-white",
-    secondaryLight:
-        "border-2 border-white text-white hover:bg-brand-secondary hover:border-brand-secondary"
+        "border-2 border-white/60 text-white hover:border-white hover:bg-white/10 hover:-translate-y-0.5",
+    ghost:
+        "underline underline-offset-4 hover:text-brand-accent px-0",
 };
 
-// Size styles
 const sizes = {
     sm: "px-6 py-2.5 text-xs",
     md: "px-10 py-4 text-sm",
-    lg: "px-14 py-5 text-base"
+    lg: "px-14 py-5 text-base",
 };
 
-const combinedClasses = [
-    baseStyles,
-    variants[variant],
-    sizes[size],
-    className
-].join(" ");
+const combinedClasses = [baseStyles, variants[variant], sizes[size], className].join(" ");
 ---
 
 <a href={href} class={combinedClasses}>
