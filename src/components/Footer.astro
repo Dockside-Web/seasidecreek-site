@@ -47,9 +47,18 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="border-t border-white/10 pt-8">
-      <p class="text-xs text-white/40 text-center font-light">
+    <div class="border-t border-white/10 flex flex-col gap-3 pt-8 sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-sans text-xs text-white/45">
         © {currentYear} Seaside Creek Advisors. All rights reserved.
+      </p>
+      <p class="font-sans text-xs text-white/45">
+        <a href="/legal/privacy-policy/" class="transition-colors hover:text-brand-accent"
+          >Privacy Policy</a
+        >
+        <span class="mx-2 text-white/25">|</span>
+        <a href="/legal/terms-of-service/" class="transition-colors hover:text-brand-accent"
+          >Terms of Service</a
+        >
       </p>
     </div>
   </div>

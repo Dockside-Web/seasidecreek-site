@@ -1,0 +1,238 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { contactInfo } from "../../data/info.ts";
+import PageHero from "../../components/PageHero.astro";
+
+const lastUpdatedDate = "August 31, 2026";
+
+const pageTitle = "Terms of Service";
+const metaDescription =
+  "View the official Terms of Use for " +
+  contactInfo.businessName +
+  ". Review our service agreement, user responsibilities, and legal conditions for our web services.";
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <PageHero
+    title="Terms of Service"
+    tagline="LEGAL"
+  />
+
+  <main class="bg-gray-50">
+    <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="px-6 py-8 sm:px-10 space-y-8">
+          <!-- Last Updated Date -->
+          <div class="bg-gray-100 border-l-4 border-brand-accent p-4">
+            <p class="text-sm font-semibold text-gray-700">
+              Last Updated: <span class="text-brand-accent">{lastUpdatedDate}</span>
+            </p>
+          </div>
+
+          <!-- Introduction -->
+          <div>
+            <p class="text-gray-700 leading-relaxed">
+              These Terms of Service ("Terms") govern your access to and use of the {
+                contactInfo.businessName
+              } website (the "Site"). By accessing or using the Site, you agree to these Terms.
+            </p>
+          </div>
+
+          <!-- Section 1 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">1) Who We Are</h2>
+            <p class="text-gray-700">
+              {contactInfo.businessName} ("{contactInfo.businessName}," "we," "us," or "our")
+              provides information about our website development services and a way to contact us.
+            </p>
+          </section>
+
+          <!-- Section 2 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">2) Eligibility</h2>
+            <p class="text-gray-700">
+              The Site is intended for users age 13 and older. By using the Site, you represent that
+              you are at least 13 years old.
+            </p>
+          </section>
+
+          <!-- Section 3 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">3) Permitted Use</h2>
+            <p class="text-gray-700">
+              You may use the Site for lawful purposes and in accordance with these Terms. You agree
+              not to misuse the Site, interfere with its operation, probe or scan for
+              vulnerabilities, attempt to access non-public areas or systems, or use automated means
+              to access the Site in a way that degrades performance.
+            </p>
+          </section>
+
+          <!-- Section 4 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">4) Contacting Us</h2>
+            <p class="text-gray-700">
+              If you contact us through the Site, you agree that the information you provide is
+              accurate and that you have the right to provide it. You also agree not to submit
+              unlawful, infringing, or harmful content.
+            </p>
+          </section>
+
+          <!-- Section 5 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">5) No User-Generated Content</h2>
+            <p class="text-gray-700">
+              The Site does not allow public posting or user-generated content (such as comments,
+              reviews, or uploads). Content on the Site is provided and maintained by {
+                contactInfo.businessName
+              }.
+            </p>
+          </section>
+
+          <!-- Section 6 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              6) No Client Relationship; Separate Service Agreement
+            </h2>
+            <p class="text-gray-700">
+              Browsing the Site or contacting us does not create a client relationship or obligate
+              us to provide services. Any professional services we provide (including scope,
+              timelines, payments, refunds, intellectual property, and deliverables) are governed by
+              a separate written service agreement between {contactInfo.businessName} and the client.
+              If there is any conflict between these Terms and a signed service agreement, the service
+              agreement controls.
+            </p>
+          </section>
+
+          <!-- Section 7 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              7) Intellectual Property (Site Content)
+            </h2>
+            <p class="text-gray-700">
+              The Site and its content (including text, graphics, logos, and design) are owned by {
+                contactInfo.businessName
+              } or our licensors and are protected by applicable intellectual property laws. You may not
+              copy, reproduce, modify, distribute, or create derivative works from the Site without our
+              prior written permission, except as permitted by law.
+            </p>
+          </section>
+
+          <!-- Section 8 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">8) Third-Party Services and Links</h2>
+            <p class="text-gray-700 mb-3">
+              The Site may incorporate or link to third-party services (for example, Cloudflare for
+              hosting, Basin for form handling, and Google Maps embeds). Third-party services are
+              governed by their own terms and policies, and we are not responsible for third-party
+              content, practices, or availability.
+            </p>
+            <div class="bg-blue-50 border border-blue-200 rounded-md p-3">
+              <p class="text-sm text-gray-700">
+                <span class="font-semibold">Note:</span> We use Cloudflare for website hosting and Basin
+                for contact form processing. Their terms can be found at <a
+                  href="https://www.cloudflare.com/terms/"
+                  class="text-brand-accent hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer">cloudflare.com/terms</a
+                > and <a
+                  href="https://usebasin.com/terms"
+                  class="text-brand-accent hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer">usebasin.com/terms</a
+                >.
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 9 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">9) Disclaimers</h2>
+            <p class="text-gray-700">
+              The Site is provided on an "as is" and "as available" basis. We do not warrant that
+              the Site will be uninterrupted, error-free, or secure, or that any content is
+              accurate, complete, or current. Your use of the Site is at your own risk.
+            </p>
+          </section>
+
+          <!-- Section 10 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">10) Limitation of Liability</h2>
+            <p class="text-gray-700">
+              To the maximum extent permitted by law, {contactInfo.businessName} will not be liable for
+              any indirect, incidental, special, consequential, or punitive damages, or any loss of profits,
+              revenue, data, or goodwill, arising out of or related to your use of (or inability to use)
+              the Site.
+            </p>
+          </section>
+
+          <!-- Section 11 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">11) Indemnification</h2>
+            <p class="text-gray-700">
+              You agree to indemnify and hold harmless {contactInfo.businessName} from and against claims,
+              liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising
+              from your misuse of the Site or violation of these Terms.
+            </p>
+          </section>
+
+          <!-- Section 12 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              12) Termination / Restriction of Access
+            </h2>
+            <p class="text-gray-700">
+              We may suspend or restrict your access to the Site (including blocking access from
+              certain IP addresses) if we reasonably believe you are violating these Terms,
+              attempting to harm the Site or other users, or using the Site in an unlawful manner.
+              This section does not limit any other rights or remedies we may have.
+            </p>
+          </section>
+
+          <!-- Section 13 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              13) Accessibility and Availability
+            </h2>
+            <p class="text-gray-700">
+              We aim to keep the Site available and working for visitors, but we do not guarantee
+              uninterrupted access. The Site may be temporarily unavailable due to maintenance,
+              updates, hosting outages, or circumstances outside our control.
+            </p>
+          </section>
+
+          <!-- Section 14 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">14) Changes to the Site or Terms</h2>
+            <p class="text-gray-700">
+              We may modify the Site or these Terms at any time. Updated Terms will be posted on
+              this page with a new "Last Updated" date. Continued use of the Site after changes
+              become effective means you accept the updated Terms.
+            </p>
+          </section>
+
+          <!-- Section 15 -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">15) Governing Law</h2>
+            <p class="text-gray-700">
+              These Terms are governed by and construed in accordance with applicable laws, without
+              regard to conflict-of-laws principles.
+            </p>
+          </section>
+
+          <!-- Contact Us -->
+          <section class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
+            <div class="text-gray-700 space-y-2">
+              <p class="font-semibold text-lg">{contactInfo.businessName}</p>
+              <p>
+                Email: <a href={`mailto:${contactInfo.email}`} class="text-brand-accent hover:underline"
+                  >{contactInfo.email}</a
+                >
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
