@@ -17,9 +17,9 @@ const bgMap: Record<string, string> = {
 const bgClass = bgMap[background] || background;
 ---
 
-<section class:list={["py-18", bgClass]}, id={id}>
+<section class:list={["py-18", bgClass]} id={id}>
   <div class:list={[
-    "container px-12 max-w-6xl mx-auto sm:px-6 lg:px-8",
+    "container px-6 max-w-6xl mx-auto lg:px-8",
     className
   ]}>
     <slot />

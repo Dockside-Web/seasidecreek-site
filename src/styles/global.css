@@ -1,13 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
   --color-brand-primary: #1c3757;
+  --color-brand-primary-light: #2a4d77;
   --color-brand-secondary: #f8f9fa;
   --color-brand-accent: #c5a059;
+  /* Darker gold for text on light backgrounds (meets WCAG AA contrast) */
+  --color-brand-accent-dark: #806229;
 
-  --font-brand: "Source Sans 3", "system-ui", "sans-serif";
-  --font-headers: "Fraunces", "serif";
+  --font-brand: "Source Sans 3", system-ui, sans-serif;
+  --font-headers: "Fraunces", serif;
 }
 
 /* Force hover to work on all devices (especially laptops with touchscreens) */
@@ -29,5 +32,21 @@
   h5,
   h6 {
     font-family: var(--font-headers);
+  }
+}
+
+/* Turn off animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
   }
 }

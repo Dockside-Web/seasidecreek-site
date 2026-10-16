@@ -18,14 +18,14 @@ const metaDescription =
     tagline="LEGAL"
   />
 
-  <main class="bg-gray-50">
+  <div class="bg-gray-50">
     <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="px-6 py-8 sm:px-10 space-y-8">
           <!-- Last Updated Date -->
           <div class="bg-gray-100 border-l-4 border-brand-accent p-4">
             <p class="text-sm font-semibold text-gray-700">
-              Last Updated: <span class="text-brand-accent">{lastUpdatedDate}</span>
+              Last Updated: <span class="text-brand-accent-dark">{lastUpdatedDate}</span>
             </p>
           </div>
 
@@ -131,12 +131,12 @@ const metaDescription =
                 <span class="font-semibold">Note:</span> We use Cloudflare for website hosting and Basin
                 for contact form processing. Their terms can be found at <a
                   href="https://www.cloudflare.com/terms/"
-                  class="text-brand-accent hover:underline"
+                  class="text-brand-accent-dark hover:underline"
                   target="_blank"
                   rel="noopener noreferrer">cloudflare.com/terms</a
                 > and <a
                   href="https://usebasin.com/terms"
-                  class="text-brand-accent hover:underline"
+                  class="text-brand-accent-dark hover:underline"
                   target="_blank"
                   rel="noopener noreferrer">usebasin.com/terms</a
                 >.
@@ -225,7 +225,7 @@ const metaDescription =
             <div class="text-gray-700 space-y-2">
               <p class="font-semibold text-lg">{contactInfo.businessName}</p>
               <p>
-                Email: <a href={`mailto:${contactInfo.email}`} class="text-brand-accent hover:underline"
+                Email: <a href={`mailto:${contactInfo.email}`} class="text-brand-accent-dark hover:underline"
                   >{contactInfo.email}</a
                 >
               </p>
@@ -234,5 +234,5 @@ const metaDescription =
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </Layout>
